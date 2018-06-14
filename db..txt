@@ -1,0 +1,300 @@
+ded_year",emp_count:{$sum:"$number_of_employees"}} }])
+> db.zipcode.aggregate([ {$match:{founde_year:{$gt:18+00}}}, {$group: {_id:"$fou
+nded_year",emp_count:{$sum:"$number_of_employees"}} }])
+> db.zipcode.aggregate([ {$match:{founde_year:{$gt:1800}}}, {$group: {_id:"$foun
+ded_year",emp_count:{$sum:"$number_of_employees"}} }])
+> db.zipcode.aggregate([
+... {$match:{foundes_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year",emp_count:{$sum:"$number_of_employees"}}
+... }])
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year",emp_count:{$sum:"$number_of_employees"}}
+... }])
+{ "_id" : 2012, "emp_count" : 1465 }
+{ "_id" : 2009, "emp_count" : 5455 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2011, "emp_count" : 1081 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2013, "emp_count" : 235 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2010, "emp_count" : 955 }
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year"total_money_raised:"$total_money_raised",emp_count:{$sum
+:"$number_of_employees"}}
+... }])
+2018-06-14T09:59:28.259+0530 SyntaxError: Unexpected identifier
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year",total_money_raised:"$total_money_raised",emp_count:{$su
+m:"$number_of_employees"}}
+... }])
+assert: command failed: {
+        "errmsg" : "exception: the group aggregate field 'total_money_raised' mu
+st be defined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'total_money_raised' mu
+st be defined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+    at Error (<anonymous>)
+    at doassert (src/mongo/shell/assert.js:11:14)
+    at Function.assert.commandWorked (src/mongo/shell/assert.js:244:5)
+    at DBCollection.aggregate (src/mongo/shell/collection.js:1149:12)
+    at (shell):1:12
+2018-06-14T09:59:43.076+0530 Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'total_money_raised' mu
+st be defined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed at src/mongo/shell/assert.js:13
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year",emp_count:{$sum:"$number_of_employees"}}
+... }])
+{ "_id" : 2012, "emp_count" : 1465 }
+{ "_id" : 2009, "emp_count" : 5455 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2011, "emp_count" : 1081 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2013, "emp_count" : 235 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2010, "emp_count" : 955 }
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year", compnayname : "$name",emp_count:{$sum:"$number_of_empl
+oyees"}}
+... }])
+assert: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnayname' must be d
+efined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnayname' must be d
+efined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+    at Error (<anonymous>)
+    at doassert (src/mongo/shell/assert.js:11:14)
+    at Function.assert.commandWorked (src/mongo/shell/assert.js:244:5)
+    at DBCollection.aggregate (src/mongo/shell/collection.js:1149:12)
+    at (shell):1:12
+2018-06-14T10:00:46.945+0530 Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnayname' must be d
+efined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed at src/mongo/shell/assert.js:13
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year", compnayname:"$name",emp_count:{$sum:"$number_of_employ
+ees"}}
+... }])
+assert: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnayname' must be d
+efined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnayname' must be d
+efined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+    at Error (<anonymous>)
+    at doassert (src/mongo/shell/assert.js:11:14)
+    at Function.assert.commandWorked (src/mongo/shell/assert.js:244:5)
+    at DBCollection.aggregate (src/mongo/shell/collection.js:1149:12)
+    at (shell):1:12
+2018-06-14T10:01:30.485+0530 Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnayname' must be d
+efined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed at src/mongo/shell/assert.js:13
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year", compnay_name:"$name",emp_count:{$sum:"$number_of_emplo
+yees"}}
+... }])
+assert: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnay_name' must be
+defined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnay_name' must be
+defined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed
+    at Error (<anonymous>)
+    at doassert (src/mongo/shell/assert.js:11:14)
+    at Function.assert.commandWorked (src/mongo/shell/assert.js:244:5)
+    at DBCollection.aggregate (src/mongo/shell/collection.js:1149:12)
+    at (shell):1:12
+2018-06-14T10:01:51.091+0530 Error: command failed: {
+        "errmsg" : "exception: the group aggregate field 'compnay_name' must be
+defined as an expression inside an object",
+        "code" : 15951,
+        "ok" : 0
+} : aggregate failed at src/mongo/shell/assert.js:13
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year", $compnay_name:"$name",emp_count:{$sum:"$number_of_empl
+oyees"}}
+... }])
+assert: command failed: {
+        "errmsg" : "exception: the group aggregate field name '$compnay_name' ca
+nnot be an operator name",
+        "code" : 15950,
+        "ok" : 0
+} : aggregate failed
+Error: command failed: {
+        "errmsg" : "exception: the group aggregate field name '$compnay_name' ca
+nnot be an operator name",
+        "code" : 15950,
+        "ok" : 0
+} : aggregate failed
+    at Error (<anonymous>)
+    at doassert (src/mongo/shell/assert.js:11:14)
+    at Function.assert.commandWorked (src/mongo/shell/assert.js:244:5)
+    at DBCollection.aggregate (src/mongo/shell/collection.js:1149:12)
+    at (shell):1:12
+2018-06-14T10:02:59.878+0530 Error: command failed: {
+        "errmsg" : "exception: the group aggregate field name '$compnay_name' ca
+nnot be an operator name",
+        "code" : 15950,
+        "ok" : 0
+} : aggregate failed at src/mongo/shell/assert.js:13
+> db.zipcode.find({}).sort({pop:1});
+error: {
+        "$err" : "Runner error: Overflow sort stage buffered data usage of 33555
+632 bytes exceeds internal limit of 33554432 bytes",
+        "code" : 17144
+}
+> db.zipcode.find({}).sort({pop:1});
+error: {
+        "$err" : "Runner error: Overflow sort stage buffered data usage of 33555
+632 bytes exceeds internal limit of 33554432 bytes",
+        "code" : 17144
+}
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year",emp_count:{$sum:"$number_of_employees"}}},
+... {$sort:{emp_count:1}}
+... ])
+{ "_id" : 2013, "emp_count" : 235 }
+{ "_id" : 2010, "emp_count" : 955 }
+{ "_id" : 2011, "emp_count" : 1081 }
+{ "_id" : 2012, "emp_count" : 1465 }
+{ "_id" : 2009, "emp_count" : 5455 }
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([ {$match:{founded_year:{$gt:2000}}}, {$group: {_id:"$fou
+nded_year",emp_count:{$sum:"$number_of_employees"}}}, {$sort:{emp_count:-1}} ])
+{ "_id" : 2001, "emp_count" : 339498 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2009, "emp_count" : 5455 }
+{ "_id" : 2012, "emp_count" : 1465 }
+{ "_id" : 2011, "emp_count" : 1081 }
+{ "_id" : 2010, "emp_count" : 955 }
+{ "_id" : 2013, "emp_count" : 235 }
+> db.zipcode.aggregate([
+... {$match:{founded_year:{$gt:2000}}},
+... {$group:
+... {_id:"$founded_year",emp_count:{$sum:"$number_of_employees"}}},
+... {$sort:{emp_count:1}},
+... {$match:{emp_count:{$gt:3000}}}
+... ])
+{ "_id" : 2009, "emp_count" : 5455 }
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([ {$match:{founded_year:{$gt:2000}}}, {$group: {_id:"$fou
+nded_year",emp_count:{$sum:"$number_of_employees"}}}, {$sort:{emp_count:1}}, {$m
+atch:{emp_count:{$gt:5000}}} ])
+{ "_id" : 2009, "emp_count" : 5455 }
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([ {$match:{founded_year:{$gt:2000}}}, {$group: {_id:"$fou
+nded_year",emp_count:{$sum:"$number_of_employees"}}}, {$sort:{emp_count:1}}, {$m
+atch:{emp_count:{$gt:10000}}} ])
+{ "_id" : 2002, "emp_count" : 24911 }
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([ {$match:{founded_year:{$gt:2000}}}, {$group: {_id:"$fou
+nded_year",emp_count:{$sum:"$number_of_employees"}}}, {$sort:{emp_count:1}}, {$m
+atch:{emp_count:{$gt:25000}}} ])
+{ "_id" : 2003, "emp_count" : 26338 }
+{ "_id" : 2007, "emp_count" : 29971 }
+{ "_id" : 2004, "emp_count" : 32659 }
+{ "_id" : 2005, "emp_count" : 37149 }
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2001, "emp_count" : 339498 }
+> db.zipcode.aggregate([ {$match:{founded_year:{$gt:2000}}}, {$group: {_id:"$fou
+nded_year",emp_count:{$sum:"$number_of_employees"}}}, {$sort:{emp_count:1}}, {$m
+atch:{emp_count:{$gt:50000}}} ])
+{ "_id" : 2006, "emp_count" : 52482 }
+{ "_id" : 2008, "emp_count" : 138962 }
+{ "_id" : 2001, "emp_count" : 339498 }
+>
